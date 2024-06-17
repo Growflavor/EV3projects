@@ -113,9 +113,9 @@ ACTION_MAP = {
 #
 
 def talk():
-    spkr.speak('Hello I am robot.')
-    spkr.speak('I am running Python3 on EV3dev Debian Buster Linux Operating System.',espeak_opts='-a 175 -s 150')
-    spkr.speak('I like to experiment with Xavien!',espeak_opts='-a 175 -s 150')
+    spkr.speak('Hello I am GyroBoy.')
+    # spkr.speak('I am running Python 3.11 on EV3dev Debian Buster Linux Operating System.',espeak_opts='-a 175 -s 150')
+    # spkr.speak('I like to experiment!',espeak_opts='-a 175 -s 150')
  
 
 def update_action():
@@ -211,7 +211,7 @@ def stop_action():
     #ev3.speaker.beep(0, -1)
     arm_motor.stop()
 
-
+talk()
 while True:
     # Sleeping eyes and light off let us know that the robot is waiting for
     # any movement to stop before the program can continue.
@@ -219,20 +219,20 @@ while True:
     #if color_sensor.color == color_sensor.COLOR_BLACK:
     #    do_presentation = 1
 
-    if start_talk == 1:
-        left_motor.stop()
-        right_motor.stop()
-        start_talk = 0
-        lcd.image.paste(image_pinched_middle, (0, 0))
-        lcd.update()
-        my_leds.set_color('LEFT', 'YELLOW')
-        my_leds.set_color('RIGHT', 'YELLOW')
-        spkr.speak('Ready to speak!', play_type=1)
-        talk()
-    else:
-        lcd.image.paste(image_sleeping, (0, 0))
-        lcd.update()
-        my_leds.all_off()
+    # if start_talk == 1:
+    #    left_motor.stop()
+    #    right_motor.stop()
+    #    start_talk = 0
+    #    lcd.image.paste(image_pinched_middle, (0, 0))
+    #    lcd.update()
+    #    my_leds.set_color('LEFT', 'YELLOW')
+    #    my_leds.set_color('RIGHT', 'YELLOW')
+    #    spkr.speak('Ready to speak!', play_type=1)
+    #    talk()
+    # else:
+    lcd.image.paste(image_sleeping, (0, 0))
+    lcd.update()
+    my_leds.all_off()
 
    # spkr.speak('Hallo, ich bin hier.', play_type=1)
  
@@ -301,7 +301,7 @@ while True:
             average_control_loop_period = TARGET_LOOP_PERIOD / 1000
             control_loop_timer.restart()
         else:
-            #average_control_loop_period = (control_loop_timer.value_ms() / 1000 / control_loop_count)
+            # average_control_loop_period = (control_loop_timer.value_ms() / 1000 / control_loop_count) -- values do not use ()
             average_control_loop_period = (control_loop_timer.value_ms / 1000 / control_loop_count)
         control_loop_count += 1
 
@@ -346,8 +346,8 @@ while True:
         # than one second, we know that we are no longer balancing properly.
         if abs(output_power) < 100:
             fall_timer.restart()
-        # elif fall_timer.value_ms() > 1000:    
-        elif fall_timer.value_ms > 1000 or start_talk == 1:
+        elif fall_timer.value_ms > 1000:    
+            # elif fall_timer.value_ms > 1000 or start_talk == 1:
             break
 
         # This runs update_action() until the next "yield" statement.
@@ -379,7 +379,7 @@ while True:
     #ev3.screen.load_image(ImageFile.KNOCKED_OUT)
     lcd.image.paste(image_knocked_out, (0, 0))
     lcd.update()
-    # spkr.speak('Ouch!')
+    spkr.speak('Ouch!')
 
     spkr.play_file('./images_sound/speed_down.wav', volume=50, play_type=1)
 
