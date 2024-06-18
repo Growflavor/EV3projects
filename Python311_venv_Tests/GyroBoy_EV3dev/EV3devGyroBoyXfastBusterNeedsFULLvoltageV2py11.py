@@ -18,7 +18,7 @@ from ev3dev2.button import Button
 #from ev3dev2.sensor.lego import ColorSensor, TouchSensor, UltrasonicSensor, GyroSensor
 from ev3dev2.led import Leds
 from ev3dev2.display import Display
-from ev3fast import *
+from ev3fast import *    # source: https://github.com/QuirkyCort/ev3dev-lang-python-fast
 # Initialize the EV3 brick.
 #ev3 = EV3Brick()
 
