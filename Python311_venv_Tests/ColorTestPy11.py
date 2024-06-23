@@ -1,4 +1,4 @@
-#!/home/robot/py11venv/bin/python3.11
+#!/home/robot/venv311/bin/python3.11
 
 from collections import namedtuple
 import random
