@@ -1,4 +1,4 @@
-#!/home/robot/py11venv/bin/python3.11
+#!/home/robot/venv311/bin/python3.11
 
 with open('/sys/class/power_supply/lego-ev3-battery/voltage_now') as voltage_file:
     voltage = int(voltage_file.read())
