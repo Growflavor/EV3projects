@@ -1,4 +1,4 @@
-#!/home/robot/py11venv/bin/python3.11
+#!/home/robot/venv311/bin/python3.11
 
 from time import perf_counter
 # from ev3dev.ev3 import *
