@@ -1,4 +1,4 @@
-#!/home/robot/py11venv/bin/python3.11
+#!/home/robot/venv311/bin/python3.11
 
 import time
 from ev3dev2.sound import Sound
