@@ -75,7 +75,7 @@ TARGET_LOOP_PERIOD = 15  # ms
 ARM_MOTOR_SPEED = 50  # now -100 to 100% was 600  # deg/s
 
 # Actions will be used to change which way the robot drives.
-Action = namedtuple('Action ', ['drive_speed', 'steering'])
+Action = namedtuple('Action', ['drive_speed', 'steering'])
 
 # These are the pre-defined actions
 DO_PRESENTATION = Action(drive_speed=1, steering=0)
@@ -236,7 +236,7 @@ def update_action():
         # This adds a small delay since we don't need to read these sensors
         # continuously. Reading once every 100 milliseconds is fast enough.
         action_timer.restart()
-        while action_timer.time() < 100:
+        while action_timer.value_ms < 100:
             yield
 
 
