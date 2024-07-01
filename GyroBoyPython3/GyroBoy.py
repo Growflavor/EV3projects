@@ -225,7 +225,7 @@ def update_action():
 
             # Beep and then restore the previous action from before the
             # ultrasonic sensor detected an obstruction.
-            # action_timer.reset()
+            action_timer.restart()
             # ev3.speaker.beep(1000, -1)
             # while action_timer.time() < 100:
             #    yield
